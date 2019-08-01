@@ -14,6 +14,7 @@ let score = 0;
 
 //looks for button press 
 btnPress.addEventListener("click", ()=>{
+    btnPress.innerHTML = "ROLL"
     rollDice()
 })
 
@@ -32,15 +33,15 @@ const rollDice = () => {
 // if player rolls 1 then game over, if reaches 20 they win
 const scoreCalc = () => {
     if(score == 1 || diceNumber == 1){
-        message1.innerHTML = "Sorry you're a loser"
+        message1.innerHTML = "Sorry you rolled 1 \n you're a loser"
         userscore.innerHTML = score;
-
+       end();
     }
     else if (score >= 20){
-        diceNumber = 0; 
-        score =0;
         userscore.innerHTML = score;
         message1.innerHTML = "You're a winner!!!!!!!"
+        end()
+    
     }
     else{
         userscore.innerHTML = score;
@@ -51,4 +52,10 @@ const scoreCalc = () => {
 }
 
 
-
+const end = () => {
+    btnPress.innerHTML = "Play Again?"
+    diceNumber = 0; 
+    score = 0;
+    userscore.innerHTML = score;
+    dicenum.innerHTML = diceNumber;
+}
