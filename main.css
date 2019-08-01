@@ -1,0 +1,14 @@
+body {
+    background-color: orange;
+    display: flex;
+    align-content: center;
+    color: black;
+}
+
+.game-area {
+    display: flex;
+    align-content: center;
+    border: solid black;
+    height: 40vh;
+    width: 40vh;
+}
