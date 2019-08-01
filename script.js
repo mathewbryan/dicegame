@@ -2,6 +2,7 @@ let btnPress = document.getElementById('startbutton')
 let dicevalue =  document.getElementById('dicenum')
 let currentscore =  document.getElementById('userscore')
 let usermessage =  document.getElementById('message1')
+let diceImage = document.getElementById('diceimage')
 
 let diceNumber; 
 let score = 0;
@@ -22,7 +23,7 @@ const rollDice = () => {
     console.log(diceNumber)
     score += diceNumber
     dicenum.innerHTML = diceNumber;
-    
+    diceImage.src = `img/dice${diceNumber}.png`
     console.log(score)
     scoreCalc()
 }
@@ -44,8 +45,10 @@ const scoreCalc = () => {
     else{
         userscore.innerHTML = score;
         message1.innerHTML = "Roll again"
+
         // alert("roll again")
     }
 }
+
 
 
