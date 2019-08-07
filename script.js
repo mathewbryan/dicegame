@@ -1,10 +1,10 @@
 let btnPress = document.getElementById('startbutton')
-let dicevalue =  document.getElementById('dicenum')
-let currentscore =  document.getElementById('userscore')
-let usermessage =  document.getElementById('message1')
+let dicevalue = document.getElementById('dicenum')
+let currentscore = document.getElementById('userscore')
+let usermessage = document.getElementById('message1')
 let diceImage = document.getElementById('diceimage')
 
-let diceNumber; 
+let diceNumber;
 let score = 0;
 
 
@@ -13,14 +13,14 @@ let score = 0;
 // })
 
 //looks for button press 
-btnPress.addEventListener("click", ()=>{
+btnPress.addEventListener("click", () => {
     btnPress.innerHTML = "ROLL"
     rollDice()
 })
 
 // rolls dice 
 const rollDice = () => {
-    diceNumber = Math.floor(Math.random()* 6)+1
+    diceNumber = Math.floor(Math.random() * 6) + 1
     console.log(diceNumber)
     score += diceNumber
     dicenum.innerHTML = diceNumber;
@@ -32,18 +32,18 @@ const rollDice = () => {
 
 // if player rolls 1 then game over, if reaches 20 they win
 const scoreCalc = () => {
-    if(score == 1 || diceNumber == 1){
+    if (score == 1 || diceNumber == 1) {
         message1.innerHTML = "Sorry you rolled 1 \n you're a loser"
         userscore.innerHTML = score;
-       end();
+        end();
     }
-    else if (score >= 20){
+    else if (score >= 20) {
         userscore.innerHTML = score;
-        message1.innerHTML = "You're a winner!!!!!!!"
+        message1.innerHTML = "Winner!!!!!!!"
         end()
-    
+
     }
-    else{
+    else {
         userscore.innerHTML = score;
         message1.innerHTML = "Roll again"
 
@@ -54,7 +54,7 @@ const scoreCalc = () => {
 
 const end = () => {
     btnPress.innerHTML = "Play Again?"
-    diceNumber = 0; 
+    diceNumber = 0;
     score = 0;
     userscore.innerHTML = score;
     dicenum.innerHTML = diceNumber;
